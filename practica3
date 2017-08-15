@@ -1,0 +1,101 @@
+#### clase 3###
+### transformar el scrip a diapositivas --- Probablemente
+
+## Ejercicio: generar 3 secuencias que generen los siguientes datos
+## 1) 1000 datos que se generen de 3 en 3 y pedir a R el dato 300 del vector generado
+## 2) 450 datos que su secuencia de 50 datos en 50 datos, pedir a R el dato 10
+## 3) 2000 datos que su secuencia sea de .3 en .3, en este caso pedir a R los datos 3,15,800 y 1999
+
+sec1 <- seq(to = 3000,from = 1, by =3)
+sec1
+length(sec1)
+sec1[300]
+sec2 <- seq(to=22500 , from=10 ,by= 50 )
+sec2
+length(sec2)
+sec2[10]
+sec3 <- seq(to =6000.3,from=0.5, by= 0.3 )
+length(sec3)
+sec3
+sec3[c(5, 15, 800, 1999)]
+
+
+### Ejercicio datos aleatorios
+## 1)suponemos una empresa que quiere estimar una pensión para sus trabajadores con base en la antigüedad
+##por lo que se requiere estimar una muestra de 500 trabajadores y que sus rangos de antigüedad sean de
+## de 0 a 30 años, pedir a R el último dato de esta muestra
+## 2) generar una muestra de 50000 datos que tengan un rango de 0 hasta 100000
+## 3) Generar una muestra de 50 datos que tengan un rango de 10 a 19, pedir a R los datos 34, 43 y 49
+##
+
+(antiguedad <- sample(0:30,500, replace = TRUE))
+help(replace)
+ultimo <- antiguedad[500]
+ultimo
+
+###(muestra <- sample(0:100000,50000, replace = TRUE))
+aleatorios2 <- data.frame(sample (0:100000,50000))
+View(aleatorios2)
+
+(muestra2 <- sample(10:19,50, replace = TRUE))
+m <- antiguedad[c(34, 43, 49)]
+m
+help(sample)
+
+## Matrices 
+e <- 1:10
+View(e)
+
+## Para convertirla en matriz se utiliza dim
+dim(e) <- c(2,5) ## matriz de 2 renglones y 5 columnas
+View (e)
+class(e)
+dim(e) <- c(5,2) ## Primera entrada renglones y 2da columnas
+View (e)
+### para mandar a llamar especificamente un dato de la matriz se usan corchetes
+e[5, 2] ## aquí se dan las pocisiones, renglon 5y columna 2
+e[3, 2] ## dato del renglon 3 y columna 2
+e[2,2] ## dato del renglon 2 y comuna 2
+## si solo queremos conocer los valores de una columna
+e[,2] ## valores de la columna 2
+e[,1] # valores de la columna 1
+## para conocer los valores de una fila se hace algo similar 
+e[1,] ## valores del renglon 1
+e[3,] # valores del renglon 3
+
+## como crear matrices....con la función matrix
+
+f <- matrix(110:119, nrow = 5, ncol = 2, byrow=TRUE )
+## nrow es para dar el número de filas
+## ncol es para el número de columnas
+## byrow = TRUE es para leer o correr la matriz en renglones
+## byrow = FALSE es para leer o correr la matriz en columnas
+f
+g <- matrix(1:10, nrow = 5, ncol = 2)
+g
+
+## También se le pueden asignar nombres a los renglones y a las columnas de nuestra matriz
+
+rownames(f) <- c("Manzana", "Naranja", "Piña", "Melón", "Mango")
+colnames(f) <- c("Mercado1", "Mercado2")
+f
+
+## para saber los datos de una columna
+f["Manzana", "Mercado2"] ## Renglón - Columna
+f[1,2] ## es lo mismo que arriba y el oreden igual es Renglón -Columna
+View (f)
+
+
+
+h <- matrix(2:21, nrow =4 , ncol=5)
+h
+
+## Otra forma de generar matrices en R
+i <- rbind(1:2, 4:3, c(5,6), c(2,7), c(8,9) )## empieza por renglón 
+i
+## Cada argumento se define por renglón
+j <- cbind (5:3, c(5,4,6), 9:7, c(1,5,7), 3:5) ## empieza o se define por columnas
+j
+
+
+### ctrl L borra la consola
