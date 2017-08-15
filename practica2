@@ -1,0 +1,88 @@
+##Ejercicio  ###PRACTICA 2
+#Crear 3 variables de 4 entradas. Las variables de nombres:
+#Facultad (economia, ingenieria, arq y derecho )
+#licenciatura (actuaria, ingenieria civil, arquitectura, derecho)
+#Calificacion alumnos (6,4,10,8)
+#Verificar con r que tipo de variables son 
+#Borrar las variables facultad y licencitura
+#graficar con pie la variable calificacion 
+#incorporar los diversos arguemntos utilizados en clase
+
+facultad <- c("economia", "ingenieria", "arquitectura", "derecho")
+licenciatura <- c("actuaria", "ingenieria", "arquitectura", "derecho")
+calificacion <- c(6,4,10,8)
+class(facultad)
+class(licenciatura)
+class(calificacion)
+rm(facultad,licenciatura)
+ #Grafica
+pie(calificacion, calificacion, main= "Grafica de pie de 
+    calificaciones", 
+    sub = "Fuente: Facultades",
+    col = c("deepskyblue1","darkseagreen1","firebrick4","lightpink"), radius=1.0,
+    clockwise=TRUE, lty=1)
+
+
+
+
+##VECTORES
+a <- 2 +3 #Vector longitud 1
+b <- c(3,4) - c(6,1) ### esta diferencia
+#genera un vector 2 entradas
+b
+c <- c(4,5,6) * c(5,2,1) #Vector 3 entradas
+c # hace la operacin entrada por entrada
+d <- c(1:50,7,99)
+length(d)
+length(c)
+
+## Operaciones logicas con vectores
+d >= 45
+d ==50
+d !=35
+
+##Funcion para generar sucesiones con operador y funcion 
+help(seq)
+z <- seq(0,30,3)
+z
+seq (from=0,to=30,by=3)
+seq(by=3,to=30,from=0)
+seq (10)
+
+seq (2,10)
+seq(from=3,to=10)
+secuencia <- seq(1,10,by=1)
+secuencia1 <- seq (0,100,by=10)
+sec2 <- seq (300,130, by=-3)    
+sec2
+
+#######33 muestras
+ingreso <- sample (20000:50000,100)
+(ingreso <- sample (20000:50000,100)) #con parentesis, ademas de crear la variables, llama los valores 
+ingreso >=40000
+ingreso1 <- ingreso[c(ingreso>=40000)]
+ingreso1
+
+
+
+
+### despliega automaticamente el valor del objeto 
+aleatorios <- sample(1:10,20, replace=TRUE)
+(aleatorios <- sample(1:10,20, replace=TRUE))
+
+
+##Para selecionar la posicion de un vector
+ingreso[50]   #extraer el renglon 50
+ingreso[73]
+ingreso [c(30,50,70)] #Extraer datos en esas posiciones del vector
+ingreso [seq(20,50,10)]
+ingreso[30:43] #extraer del renglon 30 al 43
+ingreso [ingreso>40000]
+ingreso [ingreso<22000]
+ingreso[ingreso>20000 & ingreso<30000]
+# | =o, &=Y
+
+######## repetir #####
+ss <- c(5, -7, 9)
+rr <- rep(ss,times=5)
+rr
