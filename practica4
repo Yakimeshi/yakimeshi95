@@ -1,0 +1,125 @@
+#######PRACTICA 4##########
+#Continuando desde tarea
+###################### ejercicio matrices########
+##### 1) crear una matriz con la funciÃ³n dim() de 4 columnas 
+#y 5 renglones, ##esta matriz esta basada en un vector que contiene estos 
+#datos 11:31
+## el nombre de los renglones es el siguiente (toluca, 
+#pachuca, gdl, mty)
+## el nombre de las columnas es (escuela1, escuela2, escuela3, 
+#escuela4, escuela5)
+## Incorporar el nombre a los renglones y columnas de la matriz
+## identificar el dato de la escuela 3 de toluca, de la escuela 5 de gdl y la escuela 1 de pachuca
+###### 2) crear con la funciÃ³n matrix una matriz de 6 renglones
+## y 3 columnas.... y preguntar por el dato de la matriz en el 
+## renglon 3 y columna 3
+
+z <- 11:30 # se tiene que eliminar el valor 31, porque el serian 21 valores y sobraria uno en la matriz
+View(z)
+dim(z) <- c(5,4)   #Poner 4 renglones, 5 columnas. Para que coincidan numero de nombres dados.
+z
+
+
+#Para nombrar renglones y columnas
+colnames(z) <- c("Toluca", "Pachuca", "Guadalajara", "Monterrey") ##renglones
+rownames(z) <- c("Escuela 1", "Escuela 2", "Escuela 3", "Escuela 4", "Escuela 5")  ##columnase
+z
+#Para identificar datos
+z["Escuela 3", "Toluca"] ## Renglón - Columna
+z["Escuela 5", "Guadalajara"]
+z["Escuela 1", "Pachuca"]
+
+
+
+
+# Crear una matriz con la funcion matrix
+h <- matrix(3:20, nrow =6 , ncol=3)
+h
+
+#Para preguntar por un dato especifico:
+h[3,3]
+
+
+##para pegar un renglon a la matriz z
+
+z <- rbind (z,c(4,5,6,7)) #rbind es para anexar renglones
+z
+#nombrar renglon añadido
+rownames(z) <- c("Escuela 1", "Escuela 2", "Escuela 3", "Escuela 4", "Escuela 5","Escuela 6")
+z
+
+
+#Para pegar una columna a la matriz z
+z <- cbind(z,c(14,25,36,47,99,81))
+#nombrar columna
+colnames(z) <- c("Toluca", "Pachuca", "Guadalajara", "Monterrey","Jocotitlan")
+z
+
+######Editar valores###
+z["Escuela 1", "Jocotitlan"] <-28 ##editar algun valor dentro de la matriz
+z
+#Otra forma de editar:
+edit (z)
+
+
+#Para multiplicar matrices.
+j%*%i
+##Para la transpuesta de una matriz se utiliza t()
+t(il)
+
+
+
+############DATA FRAME########
+#Crear vectores
+nombres <- c("Sergio", "Juan", "Roberto", "Jessica")
+edad <- c(30,43,21,18)
+altura <- c(170,165,175,172)
+salario <- c(3000,4500,2200,4300)
+basem <- data.frame(nombres,edad,altura,salario)
+View(basem)
+
+basem[4,3] <- 178 #Asignar valor 178 a la posicion (4,3) 4° Renglon, 3° columna
+
+basem$salario * 2.2 -> basem$salario
+basem
+
+peso <- c(83.5,75.2,69.3,70.5) #nuevo vector
+basem <- data.frame(nombres,edad,altura,salario,peso)
+basem
+
+basem$peso * 1.2 -> basem$peso
+
+
+round(basem$peso,3) -> basem$peso
+basem
+
+
+basem$escol <-c("prepa", "lic","ninguno", "prim")
+basem
+
+basem$sexo <- c(1,1,1,2)
+basem
+#####Tabla para saber frecuencias
+table(basem$sexo)   ##tabla de frecuencias
+
+table(basem$peso)
+
+attach(basem) #A partir de esta linea, todo lo que se haga sera con respecto a esa base.
+detach(basem) #A partir de aqui, ya no se ocupa la basem.
+
+
+##para instalar paqeuterias desde internet
+install.packages("foreign") #importar y exportar base de datos
+install.packages("questionr") #expandir frecuencias de bases de datos muestreales
+install.packages("car") #car para regresion
+
+
+#Dentro de cada paquete vienen multiplies funciones que sola las podemos
+#usar cuando mandamos a llamar el paquete
+#Para llamar una paqueteria instalada a una nueva sesion:
+library(foreign)
+library(questionr)
+require(car) ##library y require son equivalentes
+
+
+install.packages(c("foreign","questionr","car"))
