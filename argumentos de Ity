@@ -1,0 +1,20 @@
+## ARGUMENTOS DE LTY  Y SUS CARACTERISTICAS.
+help (pie)
+#Es un entero que controla el tipo de lineas. 
+# Son las siguientes.
+#1. Solida
+#2. quebrada
+#3. punteada
+#4. Punto linea
+#5. linea larga-corta
+#6. Dos lineas cortas
+
+#Es una secuencia de hasta 8 caracteres (entre 0 y 8)
+#que especifica alternativamente la longitud en puntos o pixeles,
+# de los elemnetos dibujados y los blancos;
+
+#Un ejemplo. 
+#lty="44" tendra el mismo efecto que lty=2
+ 
+# Verificamos en nuestro archivo de Practica 1.
+#sustituyendo el valor de lty en nuestra grafica. 
