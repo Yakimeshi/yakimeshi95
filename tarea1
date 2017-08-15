@@ -1,0 +1,44 @@
+###################### ejercicio matrices########
+##### 1) crear una matriz con la funciÃ³n dim() de 4 columnas 
+#y 5 renglones, ##esta matriz esta basada en un vector que contiene estos 
+#datos 11:31
+## el nombre de los renglones es el siguiente (toluca, 
+#pachuca, gdl, mty)
+## el nombre de las columnas es (escuela1, escuela2, escuela3, 
+#escuela4, escuela5)
+## Incorporar el nombre a los renglones y columnas de la matriz
+## identificar el dato de la escuela 3 de toluca, de la escuela 5 de gdl y la escuela 1 de pachuca
+###### 2) crear con la funciÃ³n matrix una matriz de 6 renglones
+## y 3 columnas.... y preguntar por el dato de la matriz en el 
+## renglon 3 y columna 3
+
+e <- 11:30 # se tiene que eliminar el valor 31, porque el serian 21 valores y sobraria uno en la matriz
+View(e)
+dim(e) <- c(4,5)   #Poner 4 renglones, 5 columnas. Para que coincidan numero de nombres dados.
+ e
+ 
+ 
+#Para nombrar renglones y columnas
+rownames(e) <- c("Toluca", "Pachuca", "Guadalajara", "Monterrey") ##renglones
+colnames(e) <- c("Escuela 1", "Escuela 2", "Escuela 3", "Escuela 4", "Escuela 5")  ##columnas
+e
+
+#Para identificar datos
+e["Toluca", "Escuela 3"] ## Renglón - Columna
+e["Guadalajara", "Escuela 5"]
+e["Pachuca", "Escuela 1"]
+
+
+
+
+# Crear una matriz con la funcion matrix
+b <- matrix(3:20, nrow =6 , ncol=3)
+b
+
+#Para preguntar por un dato especifico:
+b[3,3]
+
+
+
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
